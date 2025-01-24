@@ -4,7 +4,7 @@
     "description": "Automates inputs for a HTML textarea tag.",
     "version": "1.0.0",
     "action": {
-        "default_popup": "popup/popup.html"
+        "default_popup": "index.html"
     },
     "permissions": ["scripting"],
     "host_permissions": ["https://*/*"]
