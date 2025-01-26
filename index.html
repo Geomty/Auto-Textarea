@@ -13,17 +13,18 @@
       </div>
 
       <div class="input-container">
-        <label for="interval" id="interval-label">Time interval:</label>
+        <label for="interval" class="form-label">Time interval:</label>
         <input id="interval" type="number" min="1" max="999" required>
       </div>
 
       <div class="input-container">
-        <label for="times" id="times-label">Number of times:</label>
+        <label for="times" class="form-label">Number of times:</label>
         <input id="times" type="number" min="1" max="999" required>
       </div>
 
-      <input type="submit" id="start" value="Start">
+      <button id="start">Start</button>
     </form>
+    <p id="progress"></p>
     <script src="index.js"></script>
   </body>
 </html>

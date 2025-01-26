@@ -12,6 +12,20 @@
         
             items.detected.innerHTML = "Textarea detected";
             items.settings.style.display = "flex";
+
+            items.start.addEventListener("click", event => {
+                event.preventDefault();
+                let error = false;
+                for (i of [items.character, items.interval, items.times]) {
+                    if (!i.value.length) error = true;
+                }
+                if (error) {
+                    items.progress.innerHTML = "Error";
+                } else {
+                    items.progress.innerHTML = "Automation in progress...";
+                    items.start.disabled = true;
+                }
+            });
         }
     })
 })();
