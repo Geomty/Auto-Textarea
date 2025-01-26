@@ -5,8 +5,13 @@
         target: { tabId: tab.id }
     }, ([results]) => {
         if (results.result) {
-            document.getElementById("detected").innerHTML = "Textarea detected";
-            document.getElementById("settings").style.display = "flex";
+            let items = {};
+            ["detected", "settings", "character", "interval", "times", "start", "progress"].forEach(item => {
+                items[item] = document.getElementById(item);
+            });
+        
+            items.detected.innerHTML = "Textarea detected";
+            items.settings.style.display = "flex";
         }
     })
 })();
