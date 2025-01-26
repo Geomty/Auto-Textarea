@@ -6,6 +6,7 @@
     }, ([results]) => {
         if (results.result) {
             document.getElementById("detected").innerHTML = "Textarea detected";
+            document.getElementById("settings").style.display = "flex";
         }
     })
 })();
