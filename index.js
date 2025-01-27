@@ -36,10 +36,6 @@
     })
 })();
 
-function checkTextarea() {
-    return document.getElementsByTagName("textarea").length && document.querySelectorAll("input[type=submit]").length;
-}
-
 function automate(character, interval, times) {
     let textarea = document.getElementsByTagName("textarea")[0];
     let submit = document.querySelectorAll("input[type=submit]")[0];
@@ -51,4 +47,8 @@ function automate(character, interval, times) {
         i++;
         if (i == times) clearInterval(myInterval);
     }, interval * 1000);
+}
+
+function checkTextarea() {
+    return document.getElementsByTagName("textarea").length && document.querySelectorAll("input[type=submit]").length;
 }
