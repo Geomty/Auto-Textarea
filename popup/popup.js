@@ -19,28 +19,11 @@
                 items.progress.innerHTML = "Automation in progress...";
                 items.start.disabled = true;
 
-                chrome.scripting.executeScript({
-                    func: automate,
-                    args: [items.character.value, items.interval.value, items.times.value],
-                    target: { tabId: tab.id }
-                });
+                chrome.storage.session.set({ tab: tab.id, character: items.character.value, interval: items.interval.value, times: items.times.value });
             });
         }
     })
 })();
-
-function automate(character, interval, times) {
-    let textarea = document.getElementsByTagName("textarea")[0];
-    let submit = document.querySelectorAll("input[type=submit]")[0];
-
-    let i = 0;
-    let myInterval = setInterval(() => {
-        textarea.value += character;
-        submit.click();
-        i++;
-        if (i == times) clearInterval(myInterval);
-    }, interval * 1000);
-}
 
 function checkTextarea() {
     return document.getElementsByTagName("textarea").length && document.querySelectorAll("input[type=submit]").length;
