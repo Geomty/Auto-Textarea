@@ -6,7 +6,7 @@
     }, ([results]) => {
         if (results.result) {
             let items = {};
-            ["detected", "settings", "character", "interval", "times", "start", "progress"].forEach(item => {
+            ["detected", "settings", "character", "interval", "times", "start", "running", "stop"].forEach(item => {
                 items[item] = document.getElementById(item);
             });
         
@@ -30,6 +30,11 @@
                 inProgress(items);
                 chrome.storage.session.set({ tab: tab.id, character: items.character.value, interval: items.interval.value, times: items.times.value });
             });
+
+            // Cancel automation
+            items.stop.addEventListener("click", () => {
+                chrome.storage.session.clear();
+            })
         }
     })
 })();
@@ -39,11 +44,17 @@ function checkTextarea() {
 }
 
 function inProgress(items) {
-    items.progress.innerHTML = "Automation in progress...";
+    items.running.style.display = "flex";
+    items.character.disabled = true;
+    items.interval.disabled = true;
+    items.times.disabled = true;
     items.start.disabled = true;
 }
 
 function finished(items) {
-    items.progress.innerHTML = "";
+    items.running.style.display = "none";
+    items.character.disabled = false;
+    items.interval.disabled = false;
+    items.times.disabled = false;
     items.start.disabled = false;
 }

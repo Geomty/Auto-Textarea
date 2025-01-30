@@ -17,3 +17,13 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+#running {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+#stop {
+    height: min-content;
+}

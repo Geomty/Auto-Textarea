@@ -6,11 +6,15 @@ try {
         textarea.value += storage.character;
         submit.click();
         setTimeout(() => {
-            if (storage.times > 1) {
-                chrome.storage.session.set({ times: storage.times - 1 });
-            } else {
-                chrome.storage.session.clear();
-            }
+            chrome.storage.session.get(["times"]).then(newStorage => {
+                if (newStorage.times) {
+                    if (storage.times > 1) {
+                        chrome.storage.session.set({ times: storage.times - 1 });
+                    } else {
+                        chrome.storage.session.clear();
+                    }
+                }
+            });
         }, storage.interval * 1000);
     });
 } catch (error) {
