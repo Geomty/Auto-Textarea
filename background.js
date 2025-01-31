@@ -15,4 +15,4 @@ chrome.tabs.onRemoved.addListener(tabId => {
     chrome.storage.session.get(["tab"]).then(({ tab }) => {
         if (tabId == tab) chrome.storage.session.clear();
     });
-})
+});

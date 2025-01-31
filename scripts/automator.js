@@ -19,4 +19,5 @@ try {
     });
 } catch (error) {
     console.log(error);
+    chrome.storage.session.clear();
 }

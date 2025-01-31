@@ -68,6 +68,11 @@ input[type=submit]:hover, button:hover {
     cursor: pointer;
 }
 
+input[type=submit]:disabled {
+    background-color: #eeeeee !important;
+    cursor: auto !important;
+}
+
 #running {
     margin-top: 18px;
     display: none;
