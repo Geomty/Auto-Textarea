@@ -1,6 +1,6 @@
 try {
     var textarea = document.getElementsByTagName("textarea")[0];
-    var submit = document.querySelectorAll("input[type=submit]")[0];
+    var submit = document.querySelectorAll("[type=submit]")[0];
 
     chrome.storage.session.get(["character", "interval", "times"]).then(storage => {
         textarea.value += storage.character;

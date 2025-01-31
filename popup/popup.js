@@ -41,7 +41,7 @@
 })();
 
 function checkTextarea() {
-    return document.getElementsByTagName("textarea").length && document.querySelectorAll("input[type=submit]").length;
+    return document.getElementsByTagName("textarea").length && document.querySelectorAll("[type=submit]").length;
 }
 
 function inProgress(items) {
