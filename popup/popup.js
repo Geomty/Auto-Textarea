@@ -12,6 +12,7 @@
         
             // Show form
             items.detected.innerHTML = "Textarea and submit button detected";
+            items.detected.style.position = "inherit";
             items.settings.style.display = "flex";
 
             // Detect automation
