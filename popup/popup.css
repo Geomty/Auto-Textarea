@@ -1,8 +1,9 @@
 body {
-    width: 400px;
+    width: 300px;
     height: 350px;
     font-family: 'Trebuchet MS';
     user-select: none;
+    background-color: #cfd8dc;
 }
 
 h1, p {
@@ -10,8 +11,8 @@ h1, p {
 }
 
 #title {
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@ h1, p {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 #detected {
@@ -30,15 +31,20 @@ h1 {
 }
 
 #settings {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
     display: none;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     font-size: 15px;
+    border-radius: 20px;
+    background-color: #b0bec5;
 }
 
 .input-container {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,10 +53,23 @@ h1 {
 input, button {
     font-family: inherit;
     font-size: inherit;
+    border: 0;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #eeeeee;
+    transition: background-color 0.2s ease;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 #running {
-    margin-top: 35px;
+    margin-top: 18px;
     display: none;
     justify-content: center;
     align-items: center;
